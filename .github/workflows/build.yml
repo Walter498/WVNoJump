@@ -80,23 +80,9 @@ jobs:
 
       - name: Verify debs
         run: |
-          for f in $(find out -name "*.deb"); do
-            echo "== $f"
-            ar t "$f"
-            echo "   arch: $(python3 - <<PY
-import sys
-sys.path.insert(0, 'tools')
-from repack import ar_read
-import tarfile, io
-for n, b in ar_read("$f"):
-    if n.startswith('control.tar'):
-        tf = tarfile.open(fileobj=io.BytesIO(b), mode='r:gz')
-        for m in tf.getmembers():
-            if m.name.endswith('control'):
-                print([l for l in tf.extractfile(m).read().decode().splitlines() if l.startswith('Architecture')][0])
-PY
-)"
-          done
+          python3 tools/inspect_deb.py $(find out -name "*.deb" | sort)
+          for f in $(find out -name "*.deb"); do ar t "$f" >/dev/null || exit 1; done
+          echo "all debs OK"
 
       - uses: actions/upload-artifact@v4
         with:
