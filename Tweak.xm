@@ -431,8 +431,13 @@ static void reloadSettingsNotification(CFNotificationCenterRef center, void *obs
 // 保留是为了与 1.2 行为完全一致；不想留可以直接删掉这 8 行。
 %hook SBActivationSettings
 
-- (void)setFlag:(BOOL)flag forActivationSetting:(NSUInteger)setting   { %orig; }
-- (void)setObject:(id)obj forActivationSetting:(NSUInteger)setting    { %orig; }
+- (void)setFlag:(BOOL)flag forActivationSetting:(NSUInteger)setting {
+    %orig;
+}
+
+- (void)setObject:(id)obj forActivationSetting:(NSUInteger)setting {
+    %orig;
+}
 
 %end
 

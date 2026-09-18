@@ -38,7 +38,6 @@ jobs:
         run: |
           export THEOS=$HOME/theos
           export PATH="$THEOS/bin:$PATH"
-          make clean || true
           make package FINALPACKAGE=1 DEBUG=0
 
       - name: Make arm64e variant
