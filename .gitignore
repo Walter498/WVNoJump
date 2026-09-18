@@ -1,0 +1,9 @@
+*.o
+*.deb
+*.dylib
+*.bundle
+.obj/
+obj/
+packages/
+out/
+.theos/

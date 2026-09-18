@@ -1,0 +1,829 @@
+4000  stp     x20, x19, [sp, #-0x20]!                  
+4004  stp     x29, x30, [sp, #0x10]                    
+4008  add     x29, sp, #0x10                           
+400c  bl      #0x4908                                  ; -> 4908
+4010  adrp    x19, #0x4000                             ; __TEXT.__text "�W���O��{���"
+4014  add     x19, x19, #0x908                         
+4018  bl      #0x4cfc                                  ; ==_CFNotificationCenterGetDarwinNotifyCenter
+401c  adrp    x3, #0x8000                              ; NSSTR 'com.82flex.wtvrbgprefs/saved'
+4020  add     x3, x3, #0xd0                            
+4024  mov     x1, #0                                   
+4028  mov     x2, x19                                  
+402c  mov     x4, #0                                   
+4030  mov     w5, #2                                   
+4034  ldp     x29, x30, [sp, #0x10]                    
+4038  ldp     x20, x19, [sp], #0x20                    
+403c  b       #0x4cf0                                  ; ==_CFNotificationCenterAddObserver
+4040  stp     x20, x19, [sp, #-0x20]!                  
+4044  stp     x29, x30, [sp, #0x10]                    
+4048  add     x29, sp, #0x10                           
+404c  adrp    x0, #0x5000                              ; __TEXT.__cstring "SBActivationSettings"
+4050  add     x0, x0, #0x115                           
+4054  bl      #0x4d20                                  ; ==_objc_getClass
+4058  mov     x19, x0                                  
+405c  adrp    x8, #0xc000                              ; @sel(absoluteString)
+4060  ldr     x1, [x8, #0xc8]                          
+4064  adrp    x2, #0x4000                              ; __TEXT.__text "H"
+4068  add     x2, x2, #0xf0                            
+406c  adrp    x3, #0xc000                              ; __DATA.__bss ""
+4070  add     x3, x3, #0x138                           
+4074  bl      #0x4d08                                  ; ==_MSHookMessageEx
+4078  adrp    x8, #0xc000                              ; @sel(absoluteString)
+407c  ldr     x1, [x8, #0xd8]                          
+4080  adrp    x2, #0x4000                              ; __TEXT.__text "H"
+4084  add     x2, x2, #0xfc                            
+4088  adrp    x3, #0xc000                              ; __DATA.__bss "�"
+408c  add     x3, x3, #0x140                           
+4090  mov     x0, x19                                  
+4094  bl      #0x4d08                                  ; ==_MSHookMessageEx
+4098  adrp    x0, #0x5000                              ; __TEXT.__cstring "SBWorkspaceTransitionContext"
+409c  add     x0, x0, #0x12a                           
+40a0  bl      #0x4d20                                  ; ==_objc_getClass
+40a4  adrp    x8, #0xc000                              ; @sel(absoluteString)
+40a8  ldr     x1, [x8, #0x20]                          
+40ac  adrp    x2, #0x4000                              ; __TEXT.__text "����o��g��_��W��O��{�����"
+40b0  add     x2, x2, #0x108                           
+40b4  adrp    x3, #0xc000                              ; __DATA.__bss ""
+40b8  add     x3, x3, #0x148                           
+40bc  bl      #0x4d08                                  ; ==_MSHookMessageEx
+40c0  adrp    x0, #0x5000                              ; __TEXT.__cstring "SBApplicationSceneView"
+40c4  add     x0, x0, #0x147                           
+40c8  bl      #0x4d20                                  ; ==_objc_getClass
+40cc  adrp    x8, #0xc000                              ; @sel(absoluteString)
+40d0  ldr     x1, [x8, #0x90]                          
+40d4  adrp    x2, #0x4000                              ; __TEXT.__text "����+m�#m�_��W��O	��{
+�����"
+40d8  add     x2, x2, #0x6c8                           
+40dc  adrp    x3, #0xc000                              ; __DATA.__bss "__TEXT"
+40e0  add     x3, x3, #0x150                           
+40e4  ldp     x29, x30, [sp, #0x10]                    
+40e8  ldp     x20, x19, [sp], #0x20                    
+40ec  b       #0x4d08                                  ; ==_MSHookMessageEx
+40f0  adrp    x8, #0xc000                              ; @sel(absoluteString)
+40f4  ldr     x4, [x8, #0x138]                         
+40f8  br      x4                                       
+40fc  adrp    x8, #0xc000                              ; @sel(absoluteString)
+4100  ldr     x4, [x8, #0x140]                         
+4104  br      x4                                       
+4108  sub     sp, sp, #0x70                            
+410c  stp     x28, x27, [sp, #0x10]                    
+4110  stp     x26, x25, [sp, #0x20]                    
+4114  stp     x24, x23, [sp, #0x30]                    
+4118  stp     x22, x21, [sp, #0x40]                    
+411c  stp     x20, x19, [sp, #0x50]                    
+4120  stp     x29, x30, [sp, #0x60]                    
+4124  add     x29, sp, #0x60                           
+4128  mov     x20, x0                                  
+412c  adrp    x8, #0xc000                              ; __DATA.__bss ""
+4130  ldr     x8, [x8, #0x148]                         
+4134  blr     x8                                       
+4138  mov     x21, x0                                  
+413c  adrp    x8, #0xc000                              ; @sel(absoluteString)
+4140  ldrb    w8, [x8, #0x160]                         
+4144  cbz     w8, #0x46a4                              
+4148  mov     x0, x20                                  
+414c  bl      #0x4fe0                                  ; ==previousEntities
+4150  mov     x29, x29                                 
+4154  bl      #0x4d68                                  ; ==_objc_retainAutoreleasedReturnValue
+4158  mov     x22, x0                                  
+415c  bl      #0x4e00                                  ; ==anyObject
+4160  mov     x29, x29                                 
+4164  bl      #0x4d68                                  ; ==_objc_retainAutoreleasedReturnValue
+4168  mov     x19, x0                                  
+416c  mov     x0, x22                                  
+4170  bl      #0x4d44                                  ; ==_objc_release
+4174  mov     x0, x20                                  
+4178  bl      #0x4f00                                  ; ==entities
+417c  mov     x29, x29                                 
+4180  bl      #0x4d68                                  ; ==_objc_retainAutoreleasedReturnValue
+4184  mov     x22, x0                                  
+4188  bl      #0x4e00                                  ; ==anyObject
+418c  mov     x29, x29                                 
+4190  bl      #0x4d68                                  ; ==_objc_retainAutoreleasedReturnValue
+4194  mov     x20, x0                                  
+4198  mov     x0, x22                                  
+419c  bl      #0x4d44                                  ; ==_objc_release
+41a0  adrp    x22, #0xc000                             ; @sel(absoluteString)
+41a4  ldr     x0, [x22, #0x168]                        
+41a8  cbnz    x0, #0x41bc                              
+41ac  adrp    x0, #0x5000                              ; __TEXT.__cstring "SBApplicationSceneEntity"
+41b0  add     x0, x0, #0x2ff                           
+41b4  bl      #0x4d20                                  ; ==_objc_getClass
+41b8  str     x0, [x22, #0x168]                        
+41bc  bl      #0x4d5c                                  ; ==_objc_retainAutorelease
+41c0  mov     x22, x0                                  
+41c4  mov     x0, x19                                  
+41c8  mov     x1, x22                                  
+41cc  bl      #0x4d38                                  ; ==_objc_opt_isKindOfClass
+41d0  tbz     w0, #0, #0x4694                          
+41d4  mov     x0, x20                                  
+41d8  mov     x1, x22                                  
+41dc  bl      #0x4d38                                  ; ==_objc_opt_isKindOfClass
+41e0  tbz     w0, #0, #0x4694                          
+41e4  mov     x0, x19                                  
+41e8  bl      #0x4e20                                  ; ==application
+41ec  mov     x29, x29                                 
+41f0  bl      #0x4d68                                  ; ==_objc_retainAutoreleasedReturnValue
+41f4  mov     x23, x0                                  
+41f8  bl      #0x4e80                                  ; ==bundleIdentifier
+41fc  mov     x29, x29                                 
+4200  bl      #0x4d68                                  ; ==_objc_retainAutoreleasedReturnValue
+4204  mov     x22, x0                                  
+4208  mov     x0, x23                                  
+420c  bl      #0x4d44                                  ; ==_objc_release
+4210  mov     x0, x20                                  
+4214  bl      #0x4e20                                  ; ==application
+4218  mov     x29, x29                                 
+421c  bl      #0x4d68                                  ; ==_objc_retainAutoreleasedReturnValue
+4220  mov     x24, x0                                  
+4224  bl      #0x4e80                                  ; ==bundleIdentifier
+4228  mov     x29, x29                                 
+422c  bl      #0x4d68                                  ; ==_objc_retainAutoreleasedReturnValue
+4230  mov     x23, x0                                  
+4234  mov     x0, x24                                  
+4238  bl      #0x4d44                                  ; ==_objc_release
+423c  mov     x0, x20                                  
+4240  bl      #0x4da0                                  ; ==activationSettings
+4244  mov     x29, x29                                 
+4248  bl      #0x4d68                                  ; ==_objc_retainAutoreleasedReturnValue
+424c  mov     x25, x0                                  
+4250  mov     w2, #0xe                                 
+4254  bl      #0x4fa0                                  ; ==objectForActivationSetting:
+4258  mov     x29, x29                                 
+425c  bl      #0x4d68                                  ; ==_objc_retainAutoreleasedReturnValue
+4260  mov     x24, x0                                  
+4264  mov     x0, x25                                  
+4268  bl      #0x4d44                                  ; ==_objc_release
+426c  adrp    x8, #0xc000                              ; @sel(absoluteString)
+4270  ldrb    w8, [x8, #0x162]                         
+4274  cbz     w8, #0x42d4                              
+4278  adrp    x2, #0x8000                              ; NSSTR 'com.baidu.inputMethod'
+427c  add     x2, x2, #0x210                           
+4280  mov     x0, x23                                  
+4284  bl      #0x4f80                                  ; ==isEqualToString:
+4288  cbz     w0, #0x42d4                              
+428c  adrp    x8, #0xc000                              ; @sel(absoluteString)
+4290  ldr     x0, [x8, #0x100]                         
+4294  bl      #0x4d2c                                  ; ==_objc_opt_class
+4298  mov     x1, x0                                   
+429c  mov     x0, x24                                  
+42a0  bl      #0x4d38                                  ; ==_objc_opt_isKindOfClass
+42a4  tbz     w0, #0, #0x42d4                          
+42a8  adrp    x2, #0x8000                              ; NSSTR 'com.baidu.inputMethod.keyboard'
+42ac  add     x2, x2, #0x230                           
+42b0  mov     x0, x24                                  
+42b4  bl      #0x4f80                                  ; ==isEqualToString:
+42b8  cbz     w0, #0x42d4                              
+42bc  mov     x0, x22                                  
+42c0  bl      #0x4d50                                  ; ==_objc_retain
+42c4  adrp    x8, #0xc000                              ; @sel(absoluteString)
+42c8  ldr     x25, [x8, #0x128]                        
+42cc  str     x0, [x8, #0x128]                         
+42d0  b       #0x4670                                  ; -> 4670
+42d4  mov     x0, x20                                  
+42d8  bl      #0x4da0                                  ; ==activationSettings
+42dc  mov     x29, x29                                 
+42e0  bl      #0x4d68                                  ; ==_objc_retainAutoreleasedReturnValue
+42e4  mov     x26, x0                                  
+42e8  mov     w2, #5                                   
+42ec  bl      #0x4fa0                                  ; ==objectForActivationSetting:
+42f0  mov     x29, x29                                 
+42f4  bl      #0x4d68                                  ; ==_objc_retainAutoreleasedReturnValue
+42f8  mov     x25, x0                                  
+42fc  mov     x0, x26                                  
+4300  bl      #0x4d44                                  ; ==_objc_release
+4304  adrp    x8, #0xc000                              ; @sel(absoluteString)
+4308  ldrb    w8, [x8, #0x161]                         
+430c  cbz     w8, #0x43a8                              
+4310  adrp    x2, #0x8000                              ; NSSTR 'com.tencent.wetype'
+4314  add     x2, x2, #0x250                           
+4318  mov     x0, x23                                  
+431c  bl      #0x4f80                                  ; ==isEqualToString:
+4320  cbz     w0, #0x43a8                              
+4324  adrp    x8, #0xc000                              ; @sel(absoluteString)
+4328  ldr     x0, [x8, #0x108]                         
+432c  bl      #0x4d2c                                  ; ==_objc_opt_class
+4330  mov     x1, x0                                   
+4334  mov     x0, x25                                  
+4338  bl      #0x4d38                                  ; ==_objc_opt_isKindOfClass
+433c  tbz     w0, #0, #0x43a8                          
+4340  mov     x0, x25                                  
+4344  bl      #0x5020                                  ; ==scheme
+4348  mov     x29, x29                                 
+434c  bl      #0x4d68                                  ; ==_objc_retainAutoreleasedReturnValue
+4350  mov     x26, x0                                  
+4354  adrp    x2, #0x8000                              ; NSSTR 'wetype'
+4358  add     x2, x2, #0x270                           
+435c  bl      #0x4f80                                  ; ==isEqualToString:
+4360  tbz     w0, #0, #0x43a0                          
+4364  mov     x0, x25                                  
+4368  bl      #0x4f40                                  ; ==host
+436c  mov     x29, x29                                 
+4370  bl      #0x4d68                                  ; ==_objc_retainAutoreleasedReturnValue
+4374  mov     x27, x0                                  
+4378  adrp    x2, #0x8000                              ; NSSTR 'WXKBURL_STARTVOICERECORD'
+437c  add     x2, x2, #0x290                           
+4380  bl      #0x4f80                                  ; ==isEqualToString:
+4384  mov     x28, x0                                  
+4388  mov     x0, x27                                  
+438c  bl      #0x4d44                                  ; ==_objc_release
+4390  mov     x0, x26                                  
+4394  bl      #0x4d44                                  ; ==_objc_release
+4398  cbz     w28, #0x43a8                             
+439c  b       #0x458c                                  ; -> 458c
+43a0  mov     x0, x26                                  
+43a4  bl      #0x4d44                                  ; ==_objc_release
+43a8  adrp    x8, #0xc000                              ; @sel(absoluteString)
+43ac  ldrb    w8, [x8, #0x163]                         
+43b0  cbz     w8, #0x444c                              
+43b4  adrp    x2, #0x8000                              ; NSSTR 'com.sogou.sogouinput'
+43b8  add     x2, x2, #0x2b0                           
+43bc  mov     x0, x23                                  
+43c0  bl      #0x4f80                                  ; ==isEqualToString:
+43c4  cbz     w0, #0x444c                              
+43c8  adrp    x8, #0xc000                              ; @sel(absoluteString)
+43cc  ldr     x0, [x8, #0x108]                         
+43d0  bl      #0x4d2c                                  ; ==_objc_opt_class
+43d4  mov     x1, x0                                   
+43d8  mov     x0, x25                                  
+43dc  bl      #0x4d38                                  ; ==_objc_opt_isKindOfClass
+43e0  tbz     w0, #0, #0x444c                          
+43e4  mov     x0, x25                                  
+43e8  bl      #0x5020                                  ; ==scheme
+43ec  mov     x29, x29                                 
+43f0  bl      #0x4d68                                  ; ==_objc_retainAutoreleasedReturnValue
+43f4  mov     x26, x0                                  
+43f8  adrp    x2, #0x8000                              ; NSSTR 'com.sogou.sogouinput.ext'
+43fc  add     x2, x2, #0x2d0                           
+4400  bl      #0x4f80                                  ; ==isEqualToString:
+4404  tbz     w0, #0, #0x4444                          
+4408  mov     x0, x25                                  
+440c  bl      #0x4d80                                  ; ==absoluteString
+4410  mov     x29, x29                                 
+4414  bl      #0x4d68                                  ; ==_objc_retainAutoreleasedReturnValue
+4418  mov     x27, x0                                  
+441c  adrp    x2, #0x8000                              ; NSSTR ':path=SpeechInput&'
+4420  add     x2, x2, #0x2f0                           
+4424  bl      #0x4ea0                                  ; ==containsString:
+4428  mov     x28, x0                                  
+442c  mov     x0, x27                                  
+4430  bl      #0x4d44                                  ; ==_objc_release
+4434  mov     x0, x26                                  
+4438  bl      #0x4d44                                  ; ==_objc_release
+443c  cbz     w28, #0x444c                             
+4440  b       #0x458c                                  ; -> 458c
+4444  mov     x0, x26                                  
+4448  bl      #0x4d44                                  ; ==_objc_release
+444c  adrp    x8, #0xc000                              ; @sel(absoluteString)
+4450  ldrb    w8, [x8, #0x164]                         
+4454  cbz     w8, #0x44f0                              
+4458  adrp    x2, #0x8000                              ; NSSTR 'com.iflytek.inputime'
+445c  add     x2, x2, #0x310                           
+4460  mov     x0, x23                                  
+4464  bl      #0x4f80                                  ; ==isEqualToString:
+4468  cbz     w0, #0x44f0                              
+446c  adrp    x8, #0xc000                              ; @sel(absoluteString)
+4470  ldr     x0, [x8, #0x108]                         
+4474  bl      #0x4d2c                                  ; ==_objc_opt_class
+4478  mov     x1, x0                                   
+447c  mov     x0, x25                                  
+4480  bl      #0x4d38                                  ; ==_objc_opt_isKindOfClass
+4484  tbz     w0, #0, #0x44f0                          
+4488  mov     x0, x25                                  
+448c  bl      #0x5020                                  ; ==scheme
+4490  mov     x29, x29                                 
+4494  bl      #0x4d68                                  ; ==_objc_retainAutoreleasedReturnValue
+4498  mov     x26, x0                                  
+449c  adrp    x2, #0x8000                              ; NSSTR 'xfime'
+44a0  add     x2, x2, #0x330                           
+44a4  bl      #0x4f80                                  ; ==isEqualToString:
+44a8  tbz     w0, #0, #0x44e8                          
+44ac  mov     x0, x25                                  
+44b0  bl      #0x4f40                                  ; ==host
+44b4  mov     x29, x29                                 
+44b8  bl      #0x4d68                                  ; ==_objc_retainAutoreleasedReturnValue
+44bc  mov     x27, x0                                  
+44c0  adrp    x2, #0x8000                              ; NSSTR 'activate_for_record'
+44c4  add     x2, x2, #0x350                           
+44c8  bl      #0x4f80                                  ; ==isEqualToString:
+44cc  mov     x28, x0                                  
+44d0  mov     x0, x27                                  
+44d4  bl      #0x4d44                                  ; ==_objc_release
+44d8  mov     x0, x26                                  
+44dc  bl      #0x4d44                                  ; ==_objc_release
+44e0  cbz     w28, #0x44f0                             
+44e4  b       #0x458c                                  ; -> 458c
+44e8  mov     x0, x26                                  
+44ec  bl      #0x4d44                                  ; ==_objc_release
+44f0  adrp    x28, #0xc000                             ; @sel(absoluteString)
+44f4  ldrb    w8, [x28, #0x165]                        
+44f8  cbz     w8, #0x45a8                              
+44fc  adrp    x2, #0x8000                              ; NSSTR 'com.bytedance.ios.doubaoime'
+4500  add     x2, x2, #0x370                           
+4504  mov     x0, x23                                  
+4508  bl      #0x4f80                                  ; ==isEqualToString:
+450c  cbz     w0, #0x45a8                              
+4510  adrp    x8, #0xc000                              ; @sel(absoluteString)
+4514  ldr     x0, [x8, #0x108]                         
+4518  bl      #0x4d2c                                  ; ==_objc_opt_class
+451c  mov     x1, x0                                   
+4520  mov     x0, x25                                  
+4524  bl      #0x4d38                                  ; ==_objc_opt_isKindOfClass
+4528  tbz     w0, #0, #0x45a8                          
+452c  mov     x0, x25                                  
+4530  bl      #0x5020                                  ; ==scheme
+4534  mov     x29, x29                                 
+4538  bl      #0x4d68                                  ; ==_objc_retainAutoreleasedReturnValue
+453c  mov     x26, x0                                  
+4540  adrp    x2, #0x8000                              ; NSSTR 'oime'
+4544  add     x2, x2, #0x390                           
+4548  bl      #0x4f80                                  ; ==isEqualToString:
+454c  tbz     w0, #0, #0x45a0                          
+4550  mov     x0, x25                                  
+4554  bl      #0x4f40                                  ; ==host
+4558  mov     x29, x29                                 
+455c  bl      #0x4d68                                  ; ==_objc_retainAutoreleasedReturnValue
+4560  mov     x27, x0                                  
+4564  adrp    x2, #0x8000                              ; NSSTR 'start_asr_from_keyboard'
+4568  add     x2, x2, #0x3b0                           
+456c  bl      #0x4f80                                  ; ==isEqualToString:
+4570  str     w0, [sp, #0xc]                           
+4574  mov     x0, x27                                  
+4578  bl      #0x4d44                                  ; ==_objc_release
+457c  mov     x0, x26                                  
+4580  bl      #0x4d44                                  ; ==_objc_release
+4584  ldr     w8, [sp, #0xc]                           
+4588  cbz     w8, #0x45a8                              
+458c  adrp    x0, #0xc000                              ; __DATA.__bss "����"
+4590  add     x0, x0, #0x128                           
+4594  mov     x1, x22                                  
+4598  bl      #0x4d74                                  ; ==_objc_storeStrong
+459c  b       #0x4670                                  ; -> 4670
+45a0  mov     x0, x26                                  
+45a4  bl      #0x4d44                                  ; ==_objc_release
+45a8  mov     x0, x20                                  
+45ac  bl      #0x4da0                                  ; ==activationSettings
+45b0  mov     x29, x29                                 
+45b4  bl      #0x4d68                                  ; ==_objc_retainAutoreleasedReturnValue
+45b8  mov     x26, x0                                  
+45bc  mov     w2, #0x2a                                
+45c0  bl      #0x4f20                                  ; ==flagForActivationSetting:
+45c4  mov     x27, x0                                  
+45c8  mov     x0, x26                                  
+45cc  bl      #0x4d44                                  ; ==_objc_release
+45d0  cbz     x27, #0x4674                             
+45d4  adrp    x8, #0xc000                              ; @sel(absoluteString)
+45d8  ldrb    w8, [x8, #0x161]                         
+45dc  cbz     w8, #0x45f4                              
+45e0  adrp    x2, #0x8000                              ; NSSTR 'com.tencent.wetype'
+45e4  add     x2, x2, #0x250                           
+45e8  mov     x0, x22                                  
+45ec  bl      #0x4f80                                  ; ==isEqualToString:
+45f0  tbnz    w0, #0, #0x4670                          
+45f4  adrp    x8, #0xc000                              ; @sel(absoluteString)
+45f8  ldrb    w8, [x8, #0x162]                         
+45fc  cbz     w8, #0x4614                              
+4600  adrp    x2, #0x8000                              ; NSSTR 'com.baidu.inputMethod'
+4604  add     x2, x2, #0x210                           
+4608  mov     x0, x22                                  
+460c  bl      #0x4f80                                  ; ==isEqualToString:
+4610  tbnz    w0, #0, #0x4670                          
+4614  adrp    x8, #0xc000                              ; @sel(absoluteString)
+4618  ldrb    w8, [x8, #0x163]                         
+461c  cbz     w8, #0x4634                              
+4620  adrp    x2, #0x8000                              ; NSSTR 'com.sogou.sogouinput'
+4624  add     x2, x2, #0x2b0                           
+4628  mov     x0, x22                                  
+462c  bl      #0x4f80                                  ; ==isEqualToString:
+4630  tbnz    w0, #0, #0x4670                          
+4634  adrp    x8, #0xc000                              ; @sel(absoluteString)
+4638  ldrb    w8, [x8, #0x164]                         
+463c  cbz     w8, #0x4654                              
+4640  adrp    x2, #0x8000                              ; NSSTR 'com.iflytek.inputime'
+4644  add     x2, x2, #0x310                           
+4648  mov     x0, x22                                  
+464c  bl      #0x4f80                                  ; ==isEqualToString:
+4650  tbnz    w0, #0, #0x4670                          
+4654  ldrb    w8, [x28, #0x165]                        
+4658  cbz     w8, #0x4674                              
+465c  adrp    x2, #0x8000                              ; NSSTR 'com.bytedance.ios.doubaoime'
+4660  add     x2, x2, #0x370                           
+4664  mov     x0, x22                                  
+4668  bl      #0x4f80                                  ; ==isEqualToString:
+466c  cbz     w0, #0x4674                              
+4670  mov     w21, #1                                  
+4674  mov     x0, x25                                  
+4678  bl      #0x4d44                                  ; ==_objc_release
+467c  mov     x0, x24                                  
+4680  bl      #0x4d44                                  ; ==_objc_release
+4684  mov     x0, x23                                  
+4688  bl      #0x4d44                                  ; ==_objc_release
+468c  mov     x0, x22                                  
+4690  bl      #0x4d44                                  ; ==_objc_release
+4694  mov     x0, x20                                  
+4698  bl      #0x4d44                                  ; ==_objc_release
+469c  mov     x0, x19                                  
+46a0  bl      #0x4d44                                  ; ==_objc_release
+46a4  mov     x0, x21                                  
+46a8  ldp     x29, x30, [sp, #0x60]                    
+46ac  ldp     x20, x19, [sp, #0x50]                    
+46b0  ldp     x22, x21, [sp, #0x40]                    
+46b4  ldp     x24, x23, [sp, #0x30]                    
+46b8  ldp     x26, x25, [sp, #0x20]                    
+46bc  ldp     x28, x27, [sp, #0x10]                    
+46c0  add     sp, sp, #0x70                            
+46c4  ret                                              
+46c8  sub     sp, sp, #0xb0                            
+46cc  stp     d11, d10, [sp, #0x50]                    
+46d0  stp     d9, d8, [sp, #0x60]                      
+46d4  stp     x24, x23, [sp, #0x70]                    
+46d8  stp     x22, x21, [sp, #0x80]                    
+46dc  stp     x20, x19, [sp, #0x90]                    
+46e0  stp     x29, x30, [sp, #0xa0]                    
+46e4  add     x29, sp, #0xa0                           
+46e8  mov     x19, x0                                  
+46ec  adrp    x8, #0xc000                              ; __DATA.__bss "__TEXT"
+46f0  ldr     x8, [x8, #0x150]                         
+46f4  blr     x8                                       
+46f8  adrp    x8, #0xc000                              ; @sel(absoluteString)
+46fc  ldrb    w8, [x8, #0x160]                         
+4700  cbz     w8, #0x48e8                              
+4704  mov     x0, x19                                  
+4708  bl      #0x4e20                                  ; ==application
+470c  mov     x29, x29                                 
+4710  bl      #0x4d68                                  ; ==_objc_retainAutoreleasedReturnValue
+4714  mov     x20, x0                                  
+4718  bl      #0x4e80                                  ; ==bundleIdentifier
+471c  mov     x29, x29                                 
+4720  bl      #0x4d68                                  ; ==_objc_retainAutoreleasedReturnValue
+4724  mov     x21, x0                                  
+4728  bl      #0x4d44                                  ; ==_objc_release
+472c  mov     x0, x20                                  
+4730  bl      #0x4d44                                  ; ==_objc_release
+4734  cbz     x21, #0x48e8                             
+4738  adrp    x23, #0xc000                             ; @sel(absoluteString)
+473c  ldr     x20, [x23, #0x128]                       
+4740  mov     x0, x19                                  
+4744  bl      #0x4e20                                  ; ==application
+4748  mov     x29, x29                                 
+474c  bl      #0x4d68                                  ; ==_objc_retainAutoreleasedReturnValue
+4750  mov     x21, x0                                  
+4754  bl      #0x4e80                                  ; ==bundleIdentifier
+4758  mov     x29, x29                                 
+475c  bl      #0x4d68                                  ; ==_objc_retainAutoreleasedReturnValue
+4760  mov     x22, x0                                  
+4764  mov     x0, x20                                  
+4768  mov     x2, x22                                  
+476c  bl      #0x4f80                                  ; ==isEqualToString:
+4770  mov     x20, x0                                  
+4774  mov     x0, x22                                  
+4778  bl      #0x4d44                                  ; ==_objc_release
+477c  mov     x0, x21                                  
+4780  bl      #0x4d44                                  ; ==_objc_release
+4784  adrp    x21, #0xc000                             ; @sel(absoluteString)
+4788  cbz     w20, #0x4820                             
+478c  ldr     x0, [x23, #0x128]                        
+4790  str     xzr, [x23, #0x128]                       
+4794  bl      #0x4d44                                  ; ==_objc_release
+4798  ldr     x0, [x21, #0x130]                        
+479c  cbnz    x0, #0x4828                              
+47a0  mov     x0, x19                                  
+47a4  bl      #0x50c0                                  ; ==window
+47a8  mov     x29, x29                                 
+47ac  bl      #0x4d68                                  ; ==_objc_retainAutoreleasedReturnValue
+47b0  mov     x19, x0                                  
+47b4  mov     w2, #0                                   
+47b8  bl      #0x50a0                                  ; ==snapshotViewAfterScreenUpdates:
+47bc  mov     x29, x29                                 
+47c0  bl      #0x4d68                                  ; ==_objc_retainAutoreleasedReturnValue
+47c4  ldr     x8, [x21, #0x130]                        
+47c8  str     x0, [x21, #0x130]                        
+47cc  mov     x0, x8                                   
+47d0  bl      #0x4d44                                  ; ==_objc_release
+47d4  mov     x0, x19                                  
+47d8  bl      #0x4e60                                  ; ==bounds
+47dc  ldr     x0, [x21, #0x130]                        
+47e0  bl      #0x5060                                  ; ==setFrame:
+47e4  ldr     x0, [x21, #0x130]                        
+47e8  mov     w2, #0                                   
+47ec  bl      #0x5080                                  ; ==setUserInteractionEnabled:
+47f0  ldr     x2, [x21, #0x130]                        
+47f4  mov     x0, x19                                  
+47f8  bl      #0x4dc0                                  ; ==addSubview:
+47fc  mov     x0, x19                                  
+4800  ldp     x29, x30, [sp, #0xa0]                    
+4804  ldp     x20, x19, [sp, #0x90]                    
+4808  ldp     x22, x21, [sp, #0x80]                    
+480c  ldp     x24, x23, [sp, #0x70]                    
+4810  ldp     d9, d8, [sp, #0x60]                      
+4814  ldp     d11, d10, [sp, #0x50]                    
+4818  add     sp, sp, #0xb0                            
+481c  b       #0x4d44                                  ; ==_objc_release
+4820  ldr     x0, [x21, #0x130]                        
+4824  cbz     x0, #0x48e8                              
+4828  bl      #0x4d50                                  ; ==_objc_retain
+482c  mov     x19, x0                                  
+4830  ldr     x0, [x21, #0x130]                        
+4834  str     xzr, [x21, #0x130]                       
+4838  bl      #0x4d44                                  ; ==_objc_release
+483c  adrp    x8, #0xc000                              ; @sel(absoluteString)
+4840  ldr     x20, [x8, #0x110]                        
+4844  adrp    x8, #0xc000                              ; @sel(absoluteString)
+4848  ldr     d8, [x8, #0x118]                         
+484c  adrp    x8, #0xc000                              ; @sel(absoluteString)
+4850  ldr     d9, [x8, #0x120]                         
+4854  adrp    x21, #0x8000                             ; &__NSConcreteStackBlock
+4858  ldr     x21, [x21, #0x18]                        
+485c  str     x21, [sp, #0x28]                         
+4860  adrp    x8, #0x5000                              ; STUB[removeFromSuperview]
+4864  ldr     d10, [x8, #0xe8]                         
+4868  str     d10, [sp, #0x30]                         
+486c  adrp    x8, #0x4000                              ; __TEXT.__text 0x4ccc
+4870  add     x8, x8, #0xccc                           
+4874  adrp    x9, #0x8000                              ; __DATA_CONST.__const 0x8070
+4878  add     x9, x9, #0x70                            
+487c  stp     x8, x9, [sp, #0x38]                      
+4880  mov     x0, x19                                  
+4884  bl      #0x4d50                                  ; ==_objc_retain
+4888  str     x0, [sp, #0x48]                          
+488c  str     x21, [sp]                                
+4890  adrp    x8, #0x4000                              ; __TEXT.__text 0x4ce8
+4894  add     x8, x8, #0xce8                           
+4898  str     d10, [sp, #8]                            
+489c  adrp    x9, #0x8000                              ; __DATA_CONST.__const 0x80a0
+48a0  add     x9, x9, #0xa0                            
+48a4  stp     x8, x9, [sp, #0x10]                      
+48a8  str     x0, [sp, #0x20]                          
+48ac  bl      #0x4d50                                  ; ==_objc_retain
+48b0  mov     x19, x0                                  
+48b4  add     x3, sp, #0x28                            
+48b8  mov     x4, sp                                   
+48bc  mov     x0, x20                                  
+48c0  fmov    d0, d8                                   
+48c4  fmov    d1, d9                                   
+48c8  mov     x2, #0                                   
+48cc  bl      #0x4de0                                  ; ==animateWithDuration:delay:options:animations:completion:
+48d0  ldr     x0, [sp, #0x20]                          
+48d4  bl      #0x4d44                                  ; ==_objc_release
+48d8  ldr     x0, [sp, #0x48]                          
+48dc  bl      #0x4d44                                  ; ==_objc_release
+48e0  mov     x0, x19                                  
+48e4  bl      #0x4d44                                  ; ==_objc_release
+48e8  ldp     x29, x30, [sp, #0xa0]                    
+48ec  ldp     x20, x19, [sp, #0x90]                    
+48f0  ldp     x22, x21, [sp, #0x80]                    
+48f4  ldp     x24, x23, [sp, #0x70]                    
+48f8  ldp     d9, d8, [sp, #0x60]                      
+48fc  ldp     d11, d10, [sp, #0x50]                    
+4900  add     sp, sp, #0xb0                            
+4904  ret                                              
+4908  stp     x22, x21, [sp, #-0x30]!                  
+490c  stp     x20, x19, [sp, #0x10]                    
+4910  stp     x29, x30, [sp, #0x20]                    
+4914  add     x29, sp, #0x20                           
+4918  adrp    x19, #0xc000                             ; @sel(absoluteString)
+491c  ldr     x0, [x19, #0x158]                        
+4920  cbnz    x0, #0x4950                              
+4924  adrp    x8, #0xc000                              ; @sel(absoluteString)
+4928  ldr     x0, [x8, #0xf8]                          
+492c  bl      #0x4d14                                  ; ==_objc_alloc
+4930  adrp    x2, #0x8000                              ; NSSTR 'com.82flex.wtvrbgprefs'
+4934  add     x2, x2, #0xf0                            
+4938  bl      #0x4f60                                  ; ==initWithSuiteName:
+493c  ldr     x8, [x19, #0x158]                        
+4940  str     x0, [x19, #0x158]                        
+4944  mov     x0, x8                                   
+4948  bl      #0x4d44                                  ; ==_objc_release
+494c  ldr     x0, [x19, #0x158]                        
+4950  bl      #0x4ec0                                  ; ==dictionaryRepresentation
+4954  mov     x29, x29                                 
+4958  bl      #0x4d68                                  ; ==_objc_retainAutoreleasedReturnValue
+495c  mov     x19, x0                                  
+4960  adrp    x2, #0x8000                              ; NSSTR 'IsEnabled'
+4964  add     x2, x2, #0x110                           
+4968  bl      #0x4fc0                                  ; ==objectForKeyedSubscript:
+496c  mov     x29, x29                                 
+4970  bl      #0x4d68                                  ; ==_objc_retainAutoreleasedReturnValue
+4974  mov     x20, x0                                  
+4978  cbz     x0, #0x49b0                              
+497c  adrp    x2, #0x8000                              ; NSSTR 'IsEnabled'
+4980  add     x2, x2, #0x110                           
+4984  mov     x0, x19                                  
+4988  bl      #0x4fc0                                  ; ==objectForKeyedSubscript:
+498c  mov     x29, x29                                 
+4990  bl      #0x4d68                                  ; ==_objc_retainAutoreleasedReturnValue
+4994  mov     x21, x0                                  
+4998  bl      #0x4e40                                  ; ==boolValue
+499c  adrp    x8, #0xc000                              ; @sel(absoluteString)
+49a0  strb    w0, [x8, #0x160]                         
+49a4  mov     x0, x21                                  
+49a8  bl      #0x4d44                                  ; ==_objc_release
+49ac  b       #0x49bc                                  ; -> 49bc
+49b0  adrp    x8, #0xc000                              ; @sel(absoluteString)
+49b4  mov     w9, #1                                   
+49b8  strb    w9, [x8, #0x160]                         
+49bc  mov     x0, x20                                  
+49c0  bl      #0x4d44                                  ; ==_objc_release
+49c4  adrp    x2, #0x8000                              ; NSSTR 'IsWeTypeEnabled'
+49c8  add     x2, x2, #0x130                           
+49cc  mov     x0, x19                                  
+49d0  bl      #0x4fc0                                  ; ==objectForKeyedSubscript:
+49d4  mov     x29, x29                                 
+49d8  bl      #0x4d68                                  ; ==_objc_retainAutoreleasedReturnValue
+49dc  mov     x20, x0                                  
+49e0  cbz     x0, #0x4a18                              
+49e4  adrp    x2, #0x8000                              ; NSSTR 'IsWeTypeEnabled'
+49e8  add     x2, x2, #0x130                           
+49ec  mov     x0, x19                                  
+49f0  bl      #0x4fc0                                  ; ==objectForKeyedSubscript:
+49f4  mov     x29, x29                                 
+49f8  bl      #0x4d68                                  ; ==_objc_retainAutoreleasedReturnValue
+49fc  mov     x21, x0                                  
+4a00  bl      #0x4e40                                  ; ==boolValue
+4a04  adrp    x8, #0xc000                              ; @sel(absoluteString)
+4a08  strb    w0, [x8, #0x161]                         
+4a0c  mov     x0, x21                                  
+4a10  bl      #0x4d44                                  ; ==_objc_release
+4a14  b       #0x4a24                                  ; -> 4a24
+4a18  adrp    x8, #0xc000                              ; @sel(absoluteString)
+4a1c  mov     w9, #1                                   
+4a20  strb    w9, [x8, #0x161]                         
+4a24  mov     x0, x20                                  
+4a28  bl      #0x4d44                                  ; ==_objc_release
+4a2c  adrp    x2, #0x8000                              ; NSSTR 'IsBaiduEnabled'
+4a30  add     x2, x2, #0x150                           
+4a34  mov     x0, x19                                  
+4a38  bl      #0x4fc0                                  ; ==objectForKeyedSubscript:
+4a3c  mov     x29, x29                                 
+4a40  bl      #0x4d68                                  ; ==_objc_retainAutoreleasedReturnValue
+4a44  mov     x20, x0                                  
+4a48  cbz     x0, #0x4a80                              
+4a4c  adrp    x2, #0x8000                              ; NSSTR 'IsBaiduEnabled'
+4a50  add     x2, x2, #0x150                           
+4a54  mov     x0, x19                                  
+4a58  bl      #0x4fc0                                  ; ==objectForKeyedSubscript:
+4a5c  mov     x29, x29                                 
+4a60  bl      #0x4d68                                  ; ==_objc_retainAutoreleasedReturnValue
+4a64  mov     x21, x0                                  
+4a68  bl      #0x4e40                                  ; ==boolValue
+4a6c  adrp    x8, #0xc000                              ; @sel(absoluteString)
+4a70  strb    w0, [x8, #0x162]                         
+4a74  mov     x0, x21                                  
+4a78  bl      #0x4d44                                  ; ==_objc_release
+4a7c  b       #0x4a8c                                  ; -> 4a8c
+4a80  adrp    x8, #0xc000                              ; @sel(absoluteString)
+4a84  mov     w9, #1                                   
+4a88  strb    w9, [x8, #0x162]                         
+4a8c  mov     x0, x20                                  
+4a90  bl      #0x4d44                                  ; ==_objc_release
+4a94  adrp    x2, #0x8000                              ; NSSTR 'IsSogouEnabled'
+4a98  add     x2, x2, #0x170                           
+4a9c  mov     x0, x19                                  
+4aa0  bl      #0x4fc0                                  ; ==objectForKeyedSubscript:
+4aa4  mov     x29, x29                                 
+4aa8  bl      #0x4d68                                  ; ==_objc_retainAutoreleasedReturnValue
+4aac  mov     x20, x0                                  
+4ab0  cbz     x0, #0x4ae8                              
+4ab4  adrp    x2, #0x8000                              ; NSSTR 'IsSogouEnabled'
+4ab8  add     x2, x2, #0x170                           
+4abc  mov     x0, x19                                  
+4ac0  bl      #0x4fc0                                  ; ==objectForKeyedSubscript:
+4ac4  mov     x29, x29                                 
+4ac8  bl      #0x4d68                                  ; ==_objc_retainAutoreleasedReturnValue
+4acc  mov     x21, x0                                  
+4ad0  bl      #0x4e40                                  ; ==boolValue
+4ad4  adrp    x8, #0xc000                              ; @sel(absoluteString)
+4ad8  strb    w0, [x8, #0x163]                         
+4adc  mov     x0, x21                                  
+4ae0  bl      #0x4d44                                  ; ==_objc_release
+4ae4  b       #0x4af4                                  ; -> 4af4
+4ae8  adrp    x8, #0xc000                              ; @sel(absoluteString)
+4aec  mov     w9, #1                                   
+4af0  strb    w9, [x8, #0x163]                         
+4af4  mov     x0, x20                                  
+4af8  bl      #0x4d44                                  ; ==_objc_release
+4afc  adrp    x2, #0x8000                              ; NSSTR 'IsXunFeiEnabled'
+4b00  add     x2, x2, #0x190                           
+4b04  mov     x0, x19                                  
+4b08  bl      #0x4fc0                                  ; ==objectForKeyedSubscript:
+4b0c  mov     x29, x29                                 
+4b10  bl      #0x4d68                                  ; ==_objc_retainAutoreleasedReturnValue
+4b14  mov     x20, x0                                  
+4b18  cbz     x0, #0x4b50                              
+4b1c  adrp    x2, #0x8000                              ; NSSTR 'IsXunFeiEnabled'
+4b20  add     x2, x2, #0x190                           
+4b24  mov     x0, x19                                  
+4b28  bl      #0x4fc0                                  ; ==objectForKeyedSubscript:
+4b2c  mov     x29, x29                                 
+4b30  bl      #0x4d68                                  ; ==_objc_retainAutoreleasedReturnValue
+4b34  mov     x21, x0                                  
+4b38  bl      #0x4e40                                  ; ==boolValue
+4b3c  adrp    x8, #0xc000                              ; @sel(absoluteString)
+4b40  strb    w0, [x8, #0x164]                         
+4b44  mov     x0, x21                                  
+4b48  bl      #0x4d44                                  ; ==_objc_release
+4b4c  b       #0x4b5c                                  ; -> 4b5c
+4b50  adrp    x8, #0xc000                              ; @sel(absoluteString)
+4b54  mov     w9, #1                                   
+4b58  strb    w9, [x8, #0x164]                         
+4b5c  mov     x0, x20                                  
+4b60  bl      #0x4d44                                  ; ==_objc_release
+4b64  adrp    x2, #0x8000                              ; NSSTR 'IsDoubaoEnabled'
+4b68  add     x2, x2, #0x1b0                           
+4b6c  mov     x0, x19                                  
+4b70  bl      #0x4fc0                                  ; ==objectForKeyedSubscript:
+4b74  mov     x29, x29                                 
+4b78  bl      #0x4d68                                  ; ==_objc_retainAutoreleasedReturnValue
+4b7c  mov     x20, x0                                  
+4b80  cbz     x0, #0x4bb8                              
+4b84  adrp    x2, #0x8000                              ; NSSTR 'IsDoubaoEnabled'
+4b88  add     x2, x2, #0x1b0                           
+4b8c  mov     x0, x19                                  
+4b90  bl      #0x4fc0                                  ; ==objectForKeyedSubscript:
+4b94  mov     x29, x29                                 
+4b98  bl      #0x4d68                                  ; ==_objc_retainAutoreleasedReturnValue
+4b9c  mov     x21, x0                                  
+4ba0  bl      #0x4e40                                  ; ==boolValue
+4ba4  adrp    x8, #0xc000                              ; @sel(absoluteString)
+4ba8  strb    w0, [x8, #0x165]                         
+4bac  mov     x0, x21                                  
+4bb0  bl      #0x4d44                                  ; ==_objc_release
+4bb4  b       #0x4bc4                                  ; -> 4bc4
+4bb8  adrp    x8, #0xc000                              ; @sel(absoluteString)
+4bbc  mov     w9, #1                                   
+4bc0  strb    w9, [x8, #0x165]                         
+4bc4  mov     x0, x20                                  
+4bc8  bl      #0x4d44                                  ; ==_objc_release
+4bcc  adrp    x2, #0x8000                              ; NSSTR 'AnimationInterval'
+4bd0  add     x2, x2, #0x1d0                           
+4bd4  mov     x0, x19                                  
+4bd8  bl      #0x4fc0                                  ; ==objectForKeyedSubscript:
+4bdc  mov     x29, x29                                 
+4be0  bl      #0x4d68                                  ; ==_objc_retainAutoreleasedReturnValue
+4be4  mov     x20, x0                                  
+4be8  adrp    x22, #0x5000                             ; STUB[removeFromSuperview]
+4bec  cbz     x0, #0x4c2c                              
+4bf0  adrp    x2, #0x8000                              ; NSSTR 'AnimationInterval'
+4bf4  add     x2, x2, #0x1d0                           
+4bf8  mov     x0, x19                                  
+4bfc  bl      #0x4fc0                                  ; ==objectForKeyedSubscript:
+4c00  mov     x29, x29                                 
+4c04  bl      #0x4d68                                  ; ==_objc_retainAutoreleasedReturnValue
+4c08  mov     x21, x0                                  
+4c0c  bl      #0x4ee0                                  ; ==doubleValue
+4c10  ldr     d1, [x22, #0xf0]                         
+4c14  fdiv    d0, d0, d1                               
+4c18  adrp    x8, #0xc000                              ; @sel(absoluteString)
+4c1c  str     d0, [x8, #0x118]                         
+4c20  mov     x0, x21                                  
+4c24  bl      #0x4d44                                  ; ==_objc_release
+4c28  b       #0x4c3c                                  ; -> 4c3c
+4c2c  adrp    x8, #0xc000                              ; @sel(absoluteString)
+4c30  mov     x9, #0x3333333333333333                  
+4c34  movk    x9, #0x3fd3, lsl #48                     
+4c38  str     x9, [x8, #0x118]                         
+4c3c  mov     x0, x20                                  
+4c40  bl      #0x4d44                                  ; ==_objc_release
+4c44  adrp    x2, #0x8000                              ; NSSTR 'AnimationDelay'
+4c48  add     x2, x2, #0x1f0                           
+4c4c  mov     x0, x19                                  
+4c50  bl      #0x4fc0                                  ; ==objectForKeyedSubscript:
+4c54  mov     x29, x29                                 
+4c58  bl      #0x4d68                                  ; ==_objc_retainAutoreleasedReturnValue
+4c5c  mov     x20, x0                                  
+4c60  cbz     x0, #0x4ca0                              
+4c64  adrp    x2, #0x8000                              ; NSSTR 'AnimationDelay'
+4c68  add     x2, x2, #0x1f0                           
+4c6c  mov     x0, x19                                  
+4c70  bl      #0x4fc0                                  ; ==objectForKeyedSubscript:
+4c74  mov     x29, x29                                 
+4c78  bl      #0x4d68                                  ; ==_objc_retainAutoreleasedReturnValue
+4c7c  mov     x21, x0                                  
+4c80  bl      #0x4ee0                                  ; ==doubleValue
+4c84  ldr     d1, [x22, #0xf0]                         
+4c88  fdiv    d0, d0, d1                               
+4c8c  adrp    x8, #0xc000                              ; @sel(absoluteString)
+4c90  str     d0, [x8, #0x120]                         
+4c94  mov     x0, x21                                  
+4c98  bl      #0x4d44                                  ; ==_objc_release
+4c9c  b       #0x4cb0                                  ; -> 4cb0
+4ca0  adrp    x8, #0xc000                              ; @sel(absoluteString)
+4ca4  mov     x9, #0x3333333333333333                  
+4ca8  movk    x9, #0x3fd3, lsl #48                     
+4cac  str     x9, [x8, #0x120]                         
+4cb0  mov     x0, x20                                  
+4cb4  bl      #0x4d44                                  ; ==_objc_release
+4cb8  mov     x0, x19                                  
+4cbc  ldp     x29, x30, [sp, #0x20]                    
+4cc0  ldp     x20, x19, [sp, #0x10]                    
+4cc4  ldp     x22, x21, [sp], #0x30                    
+4cc8  b       #0x4d44                                  ; ==_objc_release
+4ccc  ldr     x0, [x0, #0x20]                          
+4cd0  fmov    d0, xzr                                  
+4cd4  b       #0x5040                                  ; ==setAlpha:
+4cd8  ldr     x0, [x1, #0x20]                          
+4cdc  b       #0x4d50                                  ; ==_objc_retain
+4ce0  ldr     x0, [x0, #0x20]                          
+4ce4  b       #0x4d44                                  ; ==_objc_release
+4ce8  ldr     x0, [x0, #0x20]                          
+4cec  b       #0x5000                                  ; ==removeFromSuperview
