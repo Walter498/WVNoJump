@@ -34,40 +34,71 @@ jobs:
           cp -R /tmp/sdks-master/*.sdk "$THEOS/sdks/"
           ls "$THEOS/sdks"
 
-      - name: Build (rootless scheme)
+      # 现代 Theos 的 rootless stub 把依赖写成 @rpath/CydiaSubstrate.framework/CydiaSubstrate，
+      # 而 ElleKit / roothide bootstrap 只提供 usr/lib/libsubstrate.dylib（没有那个 framework）。
+      # 原版 WTVRBGLauncher 用的正是 @loader_path/.jbroot/usr/lib/libsubstrate.dylib，
+      # 这里把 stub 的 install-name 改掉，让依赖与之一致。
+      - name: Align substrate install-name (rootless stub)
+        run: |
+          TBD="$HOME/theos/vendor/lib/iphone/rootless/CydiaSubstrate.framework/CydiaSubstrate.tbd"
+          if [ -f "$TBD" ]; then
+            sed -i '' "s|^install-name:.*|install-name:    '@loader_path/.jbroot/usr/lib/libsubstrate.dylib'|" "$TBD"
+            grep -n "install-name" "$TBD"
+          else
+            echo "::warning::找不到 rootless substrate stub，依赖可能仍是 CydiaSubstrate.framework"
+          fi
+
+      - name: Build (rootless scheme, arm64 + arm64e)
         run: |
           export THEOS=$HOME/theos
           export PATH="$THEOS/bin:$PATH"
           make package FINALPACKAGE=1 DEBUG=0
 
-      - name: Make arm64e variant
+      - name: Verify dependency + build variants
         run: |
           set -e
           SRC=$(find "$PWD" -name "*.deb" | head -1)
-          echo "built: $SRC"
-          mkdir -p out
-          cp "$SRC" out/
-          WORK=$(mktemp -d)
-          cp "$SRC" "$WORK/pkg.deb"
-          cd "$WORK"
-          ar x pkg.deb
-          mkdir ctl && tar xf control.tar.* -C ctl
-          sed -i '' 's/^Architecture:.*/Architecture: iphoneos-arm64e/' ctl/control
-          grep -i '^Architecture' ctl/control
-          rm -f control.tar.*
-          (cd ctl && tar -czf ../control.tar.gz .)
-          DATA=$(ls data.tar.*)
-          rm -f new.deb
-          ar rc new.deb debian-binary control.tar.gz "$DATA"
-          NEWNAME=$(basename "$SRC" | sed 's/_iphoneos-arm64\.deb$/_iphoneos-arm64e.deb/')
-          cp new.deb "$OLDPWD/out/$NEWNAME"
-          ls -la "$OLDPWD/out"
+          DYLIB=$(find "$PWD" -name "*.dylib" | head -1)
+          echo "deb   : $SRC"
+          echo "dylib : $DYLIB"
+          echo "----- otool -L -----"
+          otool -L "$DYLIB"
+          otool -L "$DYLIB" | grep -q "libsubstrate.dylib" || {
+            echo "::error::substrate 依赖没对齐（仍是 CydiaSubstrate.framework）"; exit 1; }
+
+          mkdir -p out/jbroot-arm64e out/rootless-arm64 out/nojbroot-arm64e
+          BASE=$(basename "$SRC")
+          # 1) /var/jb 前缀 + iphoneos-arm64e（最贴近用户设备的形态）
+          python3 tools/repack.py "$SRC" "out/jbroot-arm64e/$BASE" --arch iphoneos-arm64e
+          # 2) 原样：/var/jb 前缀 + iphoneos-arm64（标准 rootless）
+          cp "$SRC" "out/rootless-arm64/$BASE"
+          # 3) 去掉 /var/jb 前缀 + iphoneos-arm64e（roothide 布局，与原版 deb 完全一致）
+          python3 tools/repack.py "$SRC" "out/nojbroot-arm64e/$BASE" \
+            --arch iphoneos-arm64e --strip-prefix var/jb
+
+          find out -type f | sort
 
       - name: Verify debs
         run: |
-          for f in out/*.deb; do echo "== $f"; ar t "$f"; done
+          for f in $(find out -name "*.deb"); do
+            echo "== $f"
+            ar t "$f"
+            echo "   arch: $(python3 - <<PY
+import sys
+sys.path.insert(0, 'tools')
+from repack import ar_read
+import tarfile, io
+for n, b in ar_read("$f"):
+    if n.startswith('control.tar'):
+        tf = tarfile.open(fileobj=io.BytesIO(b), mode='r:gz')
+        for m in tf.getmembers():
+            if m.name.endswith('control'):
+                print([l for l in tf.extractfile(m).read().decode().splitlines() if l.startswith('Architecture')][0])
+PY
+)"
+          done
 
       - uses: actions/upload-artifact@v4
         with:
           name: WVNoJump-debs
-          path: out/*.deb
+          path: out/**/*.deb
