@@ -1,3 +1,5 @@
+include $(THEOS)/makefiles/common.mk
+
 BUNDLE_NAME = WVNoJumpPrefs
 WVNoJumpPrefs_FILES = WVNoJumpRootListController.m
 WVNoJumpPrefs_INSTALL_PATH = /Library/PreferenceBundles
